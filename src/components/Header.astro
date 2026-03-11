@@ -3,6 +3,7 @@ import Button from "@/components/starwind/button/Button.astro";
 import ButtonGroup from "@/components/starwind/button-group/ButtonGroup.astro";
 import Separator from "@/components/starwind/separator/Separator.astro";
 import Item from "@/components/starwind/item/Item.astro";
+import ThemeToggle from "@/components/starwind/theme-toggle/ThemeToggle.astro";
 import {
   Sheet,
   SheetTrigger,
@@ -31,7 +32,7 @@ const navLinks = [
     </a>
 
     <!-- Navigation desktop -->
-    <nav class="hidden md:block">
+    <nav class="hidden md:flex items-center gap-2">
       <ButtonGroup class="gap-1">
         {navLinks.map(({ href, label }) => (
           <Button
@@ -44,10 +45,20 @@ const navLinks = [
           </Button>
         ))}
       </ButtonGroup>
+      <ThemeToggle
+        size="sm"
+        class="text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground border-primary-foreground/30 focus-visible:ring-primary-foreground/40"
+        ariaLabel="Changer le thème"
+      />
     </nav>
 
     <!-- Menu mobile (Sheet) -->
-    <div class="md:hidden">
+    <div class="md:hidden flex items-center gap-2">
+      <ThemeToggle
+        size="sm"
+        class="text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground border-primary-foreground/30 focus-visible:ring-primary-foreground/40"
+        ariaLabel="Changer le thème"
+      />
       <Sheet>
         <SheetTrigger asChild>
           <Button
