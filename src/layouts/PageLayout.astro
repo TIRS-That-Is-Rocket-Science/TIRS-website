@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Prose from '@/components/starwind/prose/Prose.astro';
+import { resolveLocale, type Locale } from '@/lib/i18n';
+
+interface Props {
+  title?: string;
+  locale?: Locale;
+  mainClass?: string;
+  proseClass?: string;
+}
+
+const {
+  title,
+  locale: localeProp,
+  mainClass,
+  proseClass,
+} = Astro.props as Props;
+
+const locale = resolveLocale(localeProp);
+---
+
+<BaseLayout title={title} locale={locale}>
+  <Header locale={locale} />
+  <main class:list={['mx-auto w-full max-w-7xl px-6 py-8 lg:py-10', mainClass]}>
+    <Prose class={proseClass}>
+      <slot />
+    </Prose>
+  </main>
+</BaseLayout>

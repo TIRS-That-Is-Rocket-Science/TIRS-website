@@ -20,4 +20,7 @@ export interface TranslationMessages {
   lessonIntro: string;
   lessonHistory1: string;
   lessonHistory2: string;
+  aboutTitle: string;
+  aboutHeading: string;
+  aboutIntro: string;
 }

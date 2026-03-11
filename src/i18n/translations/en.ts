@@ -22,4 +22,7 @@ export const en: TranslationMessages = {
   lessonIntro: 'Introduction to TIRS concepts',
   lessonHistory1: 'History of astronomy - Part 1',
   lessonHistory2: 'History of astronomy - Part 2',
+  aboutTitle: 'About',
+  aboutHeading: 'About',
+  aboutIntro: 'TIRS course website built with Astro.',
 };

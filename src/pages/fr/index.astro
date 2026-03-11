@@ -1,23 +1,20 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Header from '@/components/Header.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import Button from '@/components/starwind/button/Button.astro';
 import { t } from '@/lib/i18n';
 
 const locale = 'fr';
 const text = t(locale);
 ---
 
-<BaseLayout title={text.homeTitle} locale={locale}>
-  <Header locale={locale} />
-  <main class="prose mx-auto p-8">
-    <h1>{text.homeHeading}</h1>
-    <p>{text.homeIntro}</p>
-    <a href="/fr/lessons/intro" class="btn">{text.viewSampleLesson}</a>
-    <h2>{text.availableLessons}</h2>
-    <ul>
-      <li><a href="/fr/lessons/intro">{text.lessonIntro}</a></li>
-      <li><a href="/fr/lessons/history-of-astronomy-1">{text.lessonHistory1}</a></li>
-      <li><a href="/fr/lessons/history-of-astronomy-2">{text.lessonHistory2}</a></li>
-    </ul>
-  </main>
-</BaseLayout>
+<PageLayout title={text.homeTitle} locale={locale}>
+  <h1>{text.homeHeading}</h1>
+  <p>{text.homeIntro}</p>
+  <Button href="/fr/lessons/intro" class="w-fit">{text.viewSampleLesson}</Button>
+  <h2>{text.availableLessons}</h2>
+  <ul>
+    <li><a href="/fr/lessons/intro">{text.lessonIntro}</a></li>
+    <li><a href="/fr/lessons/history-of-astronomy-1">{text.lessonHistory1}</a></li>
+    <li><a href="/fr/lessons/history-of-astronomy-2">{text.lessonHistory2}</a></li>
+  </ul>
+</PageLayout>
