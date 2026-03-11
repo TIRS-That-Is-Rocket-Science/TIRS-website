@@ -1,0 +1,14 @@
+{
+	"servers": {
+		"starwind-ui": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@starwind-ui/mcp"
+			],
+			"env": {},
+			"type": "stdio"
+		}
+	},
+	"inputs": []
+}
