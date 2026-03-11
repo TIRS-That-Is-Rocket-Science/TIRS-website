@@ -212,7 +212,7 @@ const { class: className, ...rest } = Astro.props;
    * Links
    * -------------------------------------------------------------------------- */
 
-  .sw-prose a:not(:where(.not-sw-prose *)) {
+  .sw-prose a:not([data-slot="button"]):not(:where(.not-sw-prose *)) {
     color: var(--sw-prose-link-color);
     text-decoration: underline;
     text-decoration-color: var(--sw-prose-link-decoration-color);
@@ -223,7 +223,7 @@ const { class: className, ...rest } = Astro.props;
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
 
-  .sw-prose a:hover:not(:where(.not-sw-prose *)) {
+  .sw-prose a:not([data-slot="button"]):hover:not(:where(.not-sw-prose *)) {
     color: var(--sw-prose-link-hover-color);
   }
 

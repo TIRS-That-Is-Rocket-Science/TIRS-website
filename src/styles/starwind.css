@@ -130,6 +130,11 @@
   --outline: var(--color-neutral-400);
   --radius: 0.625rem;
 
+  /* Prose link colors */
+  --prose-link-color: var(--color-blue-800);
+  --prose-link-hover-color: var(--color-blue-900);
+  --prose-link-decoration-color: var(--color-blue-700);
+
   /* sidebar variables */
   --sidebar-background: var(--color-neutral-50);
   --sidebar-foreground: var(--color-neutral-950);
@@ -169,6 +174,11 @@
   --border: --alpha(var(--color-neutral-50) / 10%);
   --input: --alpha(var(--color-neutral-50) / 15%);
   --outline: var(--color-neutral-500);
+
+  /* Prose link colors */
+  --prose-link-color: var(--color-blue-300);
+  --prose-link-hover-color: var(--color-blue-200);
+  --prose-link-decoration-color: var(--color-blue-400);
 
   /* sidebars variables */
   --sidebar-background: var(--color-neutral-900);
