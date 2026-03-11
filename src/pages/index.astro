@@ -1,8 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Header from '@/components/Header.astro'
 ---
 
 <BaseLayout title="Accueil">
+  <Header />
   <main class="prose mx-auto p-8">
     <h1>Bienvenue — TIRS prototype (Astro + Starwind)</h1>
     <p>Ceci est un prototype minimal avec MDX et un composant Three.js en island.</p>

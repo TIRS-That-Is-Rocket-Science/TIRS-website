@@ -1,7 +1,13 @@
+@import "./starwind.css";
+
 html, body {
   height: 100%;
 }
 
 main.prose {
   max-width: 900px;
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(90deg, var(--brand-500), var(--brand-800));
 }

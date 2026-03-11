@@ -1,0 +1,81 @@
+---
+import Button from "@/components/starwind/button/Button.astro";
+import ButtonGroup from "@/components/starwind/button-group/ButtonGroup.astro";
+import Separator from "@/components/starwind/separator/Separator.astro";
+import Item from "@/components/starwind/item/Item.astro";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/starwind/sheet";
+
+const navLinks = [
+  { href: "/", label: "Accueil" },
+  { href: "/lessons/intro", label: "Leçons" },
+  { href: "/about", label: "À propos" },
+];
+---
+
+<header class="bg-brand-gradient text-primary-foreground">
+  <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+
+    <!-- Logo / Titre -->
+    <a
+      href="/"
+      class="flex items-center gap-3 text-2xl font-semibold tracking-tight text-primary-foreground hover:opacity-80 transition-opacity"
+    >
+      <img src="/logo.png" alt="TIRS logo" class="h-8 w-auto object-contain" />
+      <span>That Is Rocket Science</span>
+    </a>
+
+    <!-- Navigation desktop -->
+    <nav class="hidden md:block">
+      <ButtonGroup class="gap-1">
+        {navLinks.map(({ href, label }) => (
+          <Button
+            variant="ghost"
+            size="sm"
+            href={href}
+            class="text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground focus-visible:ring-primary-foreground/40"
+          >
+            {label}
+          </Button>
+        ))}
+      </ButtonGroup>
+    </nav>
+
+    <!-- Menu mobile (Sheet) -->
+    <div class="md:hidden">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            class="text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground focus-visible:ring-primary-foreground/40"
+            aria-label="Ouvrir le menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left">
+          <SheetHeader>
+            <SheetTitle>That Is Rocket Science</SheetTitle>
+          </SheetHeader>
+          <Separator />
+          <nav class="flex flex-col gap-1 p-4">
+            {navLinks.map(({ href, label }) => (
+              <Item as="a" href={href} size="sm">
+                {label}
+              </Item>
+            ))}
+          </nav>
+        </SheetContent>
+      </Sheet>
+    </div>
+
+  </div>
+</header>
