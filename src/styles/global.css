@@ -3,7 +3,3 @@
 html, body {
   height: 100%;
 }
-
-.bg-brand-gradient {
-  background: linear-gradient(90deg, var(--brand-500), var(--brand-800));
-}
